@@ -1,75 +1,65 @@
-<img alt="Drupal Logo" src="https://www.drupal.org/files/Wordmark_blue_RGB.png" height="60px">
+INTRODUCTION
+------------
 
-Drupal is an open source content management platform supporting a variety of
-websites ranging from personal weblogs to large community-driven websites. For
-more information, visit the Drupal website, [Drupal.org][Drupal.org], and join
-the [Drupal community][Drupal community].
+The Default Drupal's Theme Has been used in The Events Management System.
+<br>
+A Custom Module "eventmodule" has been implemented to host all Events CRUD Operations. 
+<br>
+Event Module Comes with a Database table migration and a Routing to the 
+Controller to list or show Events and a Store , update and Delete Event.
 
-## Contributing
+INSTALLATION
+------------
 
-Drupal is developed on [Drupal.org][Drupal.org], the home of the international
-Drupal community since 2001!
+* Install as you would normally install a contributed Drupal module. Visit
+  https://www.drupal.org/node/1897420 for further information.
 
-[Drupal.org][Drupal.org] hosts Drupal's [GitLab repository][GitLab repository],
-its [issue queue][issue queue], and its [documentation][documentation]. Before
-you start working on code, be sure to search the [issue queue][issue queue] and
-create an issue if your aren't able to find an existing issue.
+REQUIREMENTS
+------------
 
-Every issue on Drupal.org automatically creates a new community-accessible fork
-that you can contribute to. Learn more about the code contribution process on
-the [Issue forks & merge requests page][issue forks].
+First make sure to Install Drupal 9 on your machine.
 
-## Usage
+Go to Administration Panel and navigate to Extend -> Then Install our module.
 
-For a brief introduction, see [USAGE.txt](/core/USAGE.txt). You can also find
-guides, API references, and more by visiting Drupal's [documentation
-page][documentation].
+on *ur_domain.com/EventsManagementSystem/admin/modules* . 
 
-You can quickly extend Drupal's core feature set by installing any of its
-[thousands of free and open source modules][modules]. With Drupal and its
-module ecosystem, you can often build most or all of what your project needs
-before writing a single line of code.
+Before This Step you may need to clear Cache by One of those:
+* Navigate to Configuration then Performance.
+* Use drush cr command, if you already have drush installed on your machine.
 
-## Changelog
+After Install The Custom Module.
 
-Drupal keeps detailed [change records][changelog]. You can search Drupal's
-changes for a record of every notable breaking change and new feature since
-2011.
+You Know Able to Navigate the Module and do your CRUD Operations 
 
-## Security
 
-For a list of security announcements, see the [Security advisories
-page][Security advisories] (available as [an RSS feed][security RSS]). This
-page also describes how to subscribe to these announcements via email.
+* [List Events](http://localhost/admin/events/index)
+* [Show Event](http://localhost/admin/eventmodule/{id}/show)
 
-For information about the Drupal security process, or to find out how to report
-a potential security issue to the Drupal security team, see the [Security team
-page][security team].
+CONFIGURATION
+-------------
 
-## Need a helping hand?
+The module has no menu or modifiable settings. There is no configuration. When
+enabled, the module will prevent the links from appearing. To get the links
+back, disable the module and clear caches.
 
-Visit the [Support page][support] or browse [over a thousand Drupal
-providers][service providers] offering design, strategy, development, and
-hosting services.
+TROUBLESHOOTING
+---------------
 
-## Legal matters
+* If the menu does not display, check the following:
 
-Know your rights when using Drupal by reading Drupal core's
-[license](/core/LICENSE.txt).
+    - Are the "Access administration menu" and "Use the administration pages
+      and help" permissions enabled for the appropriate roles?
 
-Learn about the [Drupal trademark and logo policy here][trademark].
+    - Does html.tpl.php of your theme output the $page_bottom variable?
 
-[Drupal.org]: https://www.drupal.org
-[Drupal community]: https://www.drupal.org/community
-[GitLab repository]: https://git.drupalcode.org/project/drupal
-[issue queue]: https://www.drupal.org/project/issues/drupal
-[issue forks]: https://www.drupal.org/drupalorg/docs/gitlab-integration/issue-forks-merge-requests
-[documentation]: https://www.drupal.org/documentation
-[changelog]: https://www.drupal.org/list-changes/drupal
-[modules]: https://www.drupal.org/project/project_module
-[security advisories]: https://www.drupal.org/security
-[security RSS]: https://www.drupal.org/security/rss.xml
-[security team]: https://www.drupal.org/drupal-security-team
-[service providers]: https://www.drupal.org/drupal-services
-[support]: https://www.drupal.org/support
-[trademark]: https://www.drupal.com/trademark
+FAQ
+---
+
+Q: I enabled "Aggregate and compress CSS files", but admin_menu.css is still
+there. Is this normal?
+
+A: Yes, this is the intended behavior. the administration menu module only loads
+its stylesheet as needed (i.e., on page requests by logged-on, administrative
+users).
+
+
